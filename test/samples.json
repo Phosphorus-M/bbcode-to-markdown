@@ -17,22 +17,22 @@
   {
 	"raw": "[quote author=&quot;Luke&quot;]<br />test<br />[/quote]<br /><br />hey!",
 	"html": "<small>@Luke:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
-	"md": "@Luke:\n\n> test\n\nhey!"
+	"md": "@Luke dijo:\n\n> test\n\nhey!"
   },
   {
 	"raw": "[quote author=Luke Larris link=topic=2835.msg20559#msg20559 date=1405282198]<br />test<br />[/quote]<br /><br />hey!",
-	"html": "<small>@Luke:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
-	"md": "@Luke:\n\n> test\n\nhey!"
+	"html": "<small>@Luke dijo:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
+	"md": "@Luke dijo:\n\n> test\n\nhey!"
   },
   {
 	"raw": "[quote author=\"Luke Larris\" link=topic=2835.msg20559#msg20559 date=1405282198]<br />test<br />[/quote]<br /><br />hey!",
-	"html": "<small>@Luke Larris:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
-	"md": "@Luke Larris:\n\n> test\n\nhey!"
+	"html": "<small>@Luke Larris dijo:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
+	"md": "@Luke Larris dijo:\n\n> test\n\nhey!"
   },
   {
 	"raw": "[quote=Luke;1234]<br />test<br />[/quote]<br /><br />hey!",
-	"html": "<small>@Luke:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
-	"md": "@Luke:\n\n> test\n\nhey!"
+	"html": "<small>@Luke dijo:</small><br><blockquote><br />test<br /></blockquote><br /><br />hey!",
+	"md": "@Luke dijo:\n\n> test\n\nhey!"
   },
   {
 	"raw": "[abbr=\"a.k.a.\"]Unknown W. Brackets[/abbr]",
@@ -223,5 +223,29 @@
 	"raw":  "<a href=\"http://steamcommunity.com/sharedfiles/filedetails/?id=318020105\" target=\"_blank\"><font color=\"#ffa500\">http://steamcommunity.com/sharedfiles/filedetails/?id=318020105</font></a",
 	"html": "<a href=\"http://steamcommunity.com/sharedfiles/filedetails/?id=318020105\" target=\"_blank\"><font color=\"#ffa500\">http://steamcommunity.com/sharedfiles/filedetails/?id=318020105</font></a",
 	"md":   "[http://steamcommunity.com/sharedfiles/filedetails/?id=318020105](http://steamcommunity.com/sharedfiles/filedetails/?id=318020105)"
-  }
+  },
+  {
+	"raw": "Cortito\n\n[video=youtube]https://youtu.be/CCp_3zw-CxA?list=PLVcxwJpncc_RumEpYJlFFVgDJlRmrZpEM[/video]",
+	"md": "Cortito\n\n[![https://youtu.be/CCp_3zw-CxA?list=PLVcxwJpncc_RumEpYJlFFVgDJlRmrZpEM](https://img.youtube.com/vi/CCp_3zw-CxA/0.jpg)](https://youtu.be/CCp_3zw-CxA?list=PLVcxwJpncc_RumEpYJlFFVgDJlRmrZpEM)"
+  },
+  {
+	"raw": "Comparto un conjunto de finales y parciales.\r\n\r\n [url=https://drive.google.com/file/d/1HUxnQUAgb_csG9RRGWdRva6rF42Yowzy/view?usp=sharing][color=#33ccff]Primer Parcial.[/color][/url]\r\n\r\n [url=https://drive.google.com/file/d/1qb_FJQzKkg66O9mWOD3Unten6c4E6_W9/view?usp=sharing][color=#33ccff]Segundo Parcial.[/color][/url]\r\n\r\n [url=https://drive.google.com/file/d/16Pj8YF3CXno4lSVRxepJmqp0lbmkMVw-/view?usp=sharing][color=#33ccff]Final.[/color][/url]\r\n\r\nEspero que les sirva, Saludos!",
+	"md": "Comparto un conjunto de finales y parciales.\n\n [Primer Parcial.](https://drive.google.com/file/d/1HUxnQUAgb_csG9RRGWdRva6rF42Yowzy/view?usp=sharing)\n\n [Segundo Parcial.](https://drive.google.com/file/d/1qb_FJQzKkg66O9mWOD3Unten6c4E6_W9/view?usp=sharing)\n\n [Final.](https://drive.google.com/file/d/16Pj8YF3CXno4lSVRxepJmqp0lbmkMVw-/view?usp=sharing)\n\nEspero que les sirva, Saludos!"
+  },
+  {
+	  "raw": "Jajaja. \nNo era exactamente así, era mucho peor lo que dije!!!!\nEsto debería ir en un lugar más serio, es muy interesante.\n<SUB>[sub]Se me está pegando lo \"aburrido\"[/sub]</SUB>",
+	  "md": "Jajaja.\nNo era exactamente así, era mucho peor lo que dije!!!!\nEsto debería ir en un lugar más serio, es muy interesante.\n<sub>Se me está pegando lo \"aburrido\"</sub>"
+  },
+	{
+		"raw": "Cito a Wade:\n\n[img]http://www.generadormemes.com/media/created/8e7h0gamwijwifthm7sx186wwqfzqgjnmixlf2tgnd4b5vvfrauy65tpjhvu13p.jpg[/img]",
+		"md": "Cito a Wade:\n\n![](http://www.generadormemes.com/media/created/8e7h0gamwijwifthm7sx186wwqfzqgjnmixlf2tgnd4b5vvfrauy65tpjhvu13p.jpg)"
+	},
+	{
+		"raw": "[quote=\"Wade Wilson\"]Yo en que categoría caigo? Porque quiero hacer del mundo un lugar mejor pero destruyendo a la humanidad.[/quote]\n\nGenio incomprendido.",
+		"md": "@Wade Wilson dijo:\n\n> Yo en que categoría caigo? Porque quiero hacer del mundo un lugar mejor pero destruyendo a la humanidad.\n\nGenio incomprendido."
+	},
+	{
+		"raw": "[quote=\"Ara01\"]\r\n[color=#005075]Muchas gracias por la información, también otra opción para aquellos que están en la búsqueda, en las[/color] [url=http://institutoarrayanes.edu.mx]escuelas en Mérida[/url] [color=#005075]también pueden encontrar todo tipo de asesorías. [/color]\r\n[/quote]\r\n\r\nAra buen dia! Por lo que vi el instituto esta en Mexico o me equivoco? La Universidad Nacional del Oeste esta en Buenos Aires, Argentina! Capaz que entendi mal y tiene sucursales aca tambien :P",
+		"md": "@Ara01 dijo:\n\n> Muchas gracias por la información, también otra opción para aquellos que están en la búsqueda, en las [escuelas en Mérida](http://institutoarrayanes.edu.mx) también pueden encontrar todo tipo de asesorías.\n\nAra buen dia! Por lo que vi el instituto esta en Mexico o me equivoco? La Universidad Nacional del Oeste esta en Buenos Aires, Argentina! Capaz que entendi mal y tiene sucursales aca tambien :P"
+	}
 ]

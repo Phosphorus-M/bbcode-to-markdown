@@ -21,10 +21,12 @@ var imageTags = ['ifl', 'ifr'];
 var codeTags = ['php', 'html'];
 
 var strikeTags = ['strike'];
+var latexTags = ['latex'];
 var italicTags = ['italic'];
 // var boldTags = ['b', 'B'];
 var quoteTags = ['quote'];
 var simpleTags = ['spoiler'];
+var videoTags = ['video'];
 var maybeSelfAttrTags = [];
 var maybeSelfAttrAnchorTags = ['ftp', 'anchor', 'iurl', 'email', 'u', 'jumpto'];
 var contentOnlyTags = [
@@ -32,7 +34,6 @@ var contentOnlyTags = [
     'soundcloud',
     'vimeo',
     'font',
-    'video',
     'embed',
     'flash',
     'bdo',
@@ -142,7 +143,7 @@ var ContentOnlyTag = (function(_super) {
 
           if (citation) {
               pieces.push('<small>');
-              pieces.push('@' + entities.decode(citation).replace(/\"/g, '').split(',')[0].split(';')[0] + ':');
+              pieces.push('@' + entities.decode(citation).replace(/\"/g, '').split(',')[0].split(';')[0] + ' dijo:');
               pieces.push('</small><br>');
           }
 
@@ -179,6 +180,21 @@ var ContentOnlyTag = (function(_super) {
       };
       return MaybeSelfAttrAnchorTag;
   })(bbcode.Tag),
+
+  VideoTag = (function(_super) {
+    __extends(VideoTag, _super);
+    function VideoTag() {
+        VideoTag.__super__.constructor.apply(this, arguments);
+    }
+    VideoTag.prototype._toHTML = function() {
+        // var url = this.params[this.name] || this.params['url'] || this.params['link'];
+        var content = this.getContent() || '';
+        const regex = /((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?/gm;
+        let value = regex.exec(content);
+        return "[!["+ content +"](https://img.youtube.com/vi/"+ value[5] +"/0.jpg)](" + content + ")";
+    };
+    return VideoTag;
+})(bbcode.Tag),
 
   LiTag = (function(_super) {
       __extends(LiTag, _super);
@@ -232,6 +248,14 @@ var ContentOnlyTag = (function(_super) {
       return StrikeTag;
   })(bbcode.createSimpleTag('strike')),
 
+  LatexTag = (function(_super) {
+    __extends(LatexTag, _super);
+    function LatexTag() {
+        LatexTag.__super__.constructor.apply(this, arguments);
+    }
+    return LatexTag;
+  })(bbcode.createSimpleTag('latex')),
+
   CodeTag = (function(_super) {
       __extends(CodeTag, _super);
       function CodeTag() {
@@ -275,6 +299,7 @@ pushTags(contentOnlyTags, ContentOnlyTag);
 pushTags(anameTags, AnameTag);
 pushTags(codeTags, CodeTag);
 pushTags(strikeTags, StrikeTag);
+pushTags(latexTags, LatexTag);
 pushTags(italicTags, ItalicTag);
 // pushTags(boldTags, BoldTag);
 pushTags(imageTags, ImageTag);
@@ -284,5 +309,6 @@ pushTags(ignoredTags, IgnoredTag);
 pushTags(quoteTags, QuoteTag);
 pushTags(maybeSelfAttrTags, MaybeSelfAttrTag);
 pushTags(maybeSelfAttrAnchorTags, MaybeSelfAttrAnchorTag);
+pushTags(videoTags, VideoTag);
 
 module.exports = newTags;

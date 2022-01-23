@@ -28,6 +28,12 @@ module.exports = {
             }
         },
         {
+            filter: "latex",
+            replacement: function (innerHTML) {
+                return '$$' + innerHTML + '$$';
+            }
+        },
+        {
             filter: ['html', 'body', 'span', 'div', 'small', 'font', 'article', 'section', 'u']
 				.concat(
 					// weird tags i came across

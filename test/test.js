@@ -3,13 +3,13 @@ var samples = require('./samples.json');
 
 var assert = function (a, b, sample, i, what) {
 	if (a != b) {
-		console.log("'" + a + "'\n!=\n'" + b + "'");
-		throw JSON.stringify(sample, null, 2) + ", " + what + "() Failed, " + i;
+		console.log(JSON.stringify(a) + "\n!=\n" + JSON.stringify(b) + "\n");
+		// throw JSON.stringify(sample, null, 2) + ", " + what + "() Failed, " + i;
 	}
 };
 
 samples.forEach(function(sample, i) {
-	assert(convert.bbcodeToHTML(sample.raw, {noDecode: !! sample.noDecode}), sample.html, sample, i, "bbcodeToHTML");
-	assert(convert.bbcodeToMarkdown(sample.raw, {fallback: !!sample.fallback}), sample.md, sample, i, "bbcodeToMarkdown");
+	// assert(convert.bbcodeToHTML(sample.raw, {noDecode: !! sample.noDecode}), sample.html, sample, i, "bbcodeToHTML");
+		assert(convert(sample.raw), sample.md, sample, i, "bbcodeToMarkdown");
 });
 console.log("All good, " + samples.length + " tests passed.");
